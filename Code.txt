@@ -1,0 +1,29 @@
+<form onsubmit="sendToWhatsApp(); return false;">
+  <label>الاسم:</label><br>
+  <input type="text" id="name" required><br><br>
+
+  <label>العنوان:</label><br>
+  <input type="text" id="address" required><br><br>
+
+  <label>رقم التليفون:</label><br>
+  <input type="text" id="phone" required><br><br>
+
+  <button type="submit">إرسال الطلب على واتساب</button>
+</form>
+
+<script>
+function sendToWhatsApp() {
+  var name = document.getElementById("name").value;
+  var address = document.getElementById("address").value;
+  var phone = document.getElementById("phone").value;
+
+  var message = "طلب جديد:%0A" +
+                "الاسم: " + name + "%0A" +
+                "العنوان: " + address + "%0A" +
+                "رقم التليفون: " + phone;
+
+  var url = "https://wa.me/201554570001?text=" + message;
+
+  window.open(url, '_blank');
+}
+</script>
